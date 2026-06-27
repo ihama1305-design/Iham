@@ -1,15 +1,17 @@
 :root {
-  --ink: #111313;
-  --paper: #f5f3ee;
-  --soft: #ebe7df;
-  --white: #ffffff;
-  --muted: #666a67;
-  --line: rgba(17, 19, 19, 0.14);
-  --charcoal: #171a1a;
-  --olive: #485c4d;
-  --red: #c8332e;
-  --blue: #234e6f;
-  --gold: #d8a72d;
+  --ink: #111614;
+  --paper: #e6e8e1;
+  --soft: #d8ded5;
+  --panel: #f1f1eb;
+  --white: #f8f8f3;
+  --muted: #5f6963;
+  --line: rgba(17, 22, 20, 0.2);
+  --strong-line: rgba(17, 22, 20, 0.46);
+  --charcoal: #171d1b;
+  --olive: #415648;
+  --red: #a43a34;
+  --blue: #2d5364;
+  --gold: #b99638;
 }
 
 * {
@@ -63,9 +65,9 @@ a {
   align-items: center;
   gap: 6px;
   padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 8px;
-  background: rgba(14, 16, 16, 0.32);
+  background: rgba(14, 18, 17, 0.42);
   backdrop-filter: blur(18px);
 }
 
@@ -86,7 +88,7 @@ a {
 
 .hero {
   position: relative;
-  min-height: 88svh;
+  min-height: 86svh;
   display: grid;
   align-items: end;
   overflow: hidden;
@@ -101,15 +103,15 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
-  filter: contrast(1.04) saturate(1.05);
+  filter: contrast(1.02) saturate(0.92) brightness(0.88);
 }
 
 .hero-shade {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(7, 8, 8, 0.86), rgba(7, 8, 8, 0.36), rgba(7, 8, 8, 0.18)),
-    linear-gradient(to top, rgba(7, 8, 8, 0.86), rgba(7, 8, 8, 0.04) 62%);
+    linear-gradient(to right, rgba(8, 11, 10, 0.92), rgba(8, 11, 10, 0.58), rgba(8, 11, 10, 0.2)),
+    linear-gradient(to top, rgba(8, 11, 10, 0.78), rgba(8, 11, 10, 0.06) 62%);
 }
 
 .hero-content {
@@ -151,7 +153,7 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 32px;
+  margin-top: 30px;
 }
 
 .hero-meta span {
@@ -159,12 +161,37 @@ section h2 {
   display: inline-flex;
   align-items: center;
   padding: 0 13px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.36);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.86rem;
   font-weight: 800;
+}
+
+.instagram-cta {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 8px;
+  background: rgba(12, 15, 14, 0.52);
+  color: var(--white);
+  backdrop-filter: blur(16px);
+}
+
+.instagram-cta span {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.instagram-cta strong {
+  font-size: 0.96rem;
 }
 
 .profile-strip {
@@ -178,7 +205,7 @@ section h2 {
 .profile-strip div {
   min-height: 132px;
   padding: 24px;
-  background: var(--white);
+  background: var(--panel);
 }
 
 .profile-strip span {
@@ -218,6 +245,7 @@ section h2 {
 .gallery-heading h2 {
   color: var(--ink);
   font-size: 3.35rem;
+  text-wrap: balance;
 }
 
 .intro-copy p:not(.section-kicker),
@@ -231,9 +259,11 @@ section h2 {
 
 .intro-photo {
   margin: 0;
+  border: 1px solid var(--strong-line);
   border-radius: 8px;
   overflow: hidden;
   background: var(--charcoal);
+  box-shadow: 0 18px 42px rgba(24, 29, 27, 0.12);
 }
 
 .intro-photo img {
@@ -262,6 +292,7 @@ section h2 {
   min-height: 250px;
   padding: 32px;
   background: var(--soft);
+  box-shadow: inset 0 4px 0 rgba(17, 22, 20, 0.34);
 }
 
 .identity-section span {
@@ -294,10 +325,11 @@ section h2 {
 }
 
 .life-item {
-  border: 1px solid var(--line);
+  border: 1px solid var(--strong-line);
   border-radius: 8px;
   overflow: hidden;
-  background: var(--white);
+  background: var(--panel);
+  box-shadow: 0 14px 34px rgba(24, 29, 27, 0.08);
 }
 
 .life-item img {
@@ -322,7 +354,9 @@ section h2 {
   align-items: center;
   padding: 96px max(24px, calc((100% - 1120px) / 2));
   color: var(--white);
-  background: var(--charcoal);
+  background:
+    linear-gradient(135deg, rgba(65, 86, 72, 0.24), rgba(45, 83, 100, 0.12)),
+    var(--charcoal);
 }
 
 .feature-copy h2 {
@@ -349,7 +383,9 @@ section h2 {
 
 .feature-photos img {
   aspect-ratio: 4 / 5;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px;
+  filter: saturate(0.95) contrast(1.02);
 }
 
 .moments-section {
@@ -364,7 +400,9 @@ section h2 {
 
 .moments-grid img {
   aspect-ratio: 4 / 5;
+  border: 1px solid var(--strong-line);
   border-radius: 8px;
+  filter: saturate(0.94) contrast(1.02);
 }
 
 .gallery-section {
@@ -394,8 +432,10 @@ section h2 {
   aspect-ratio: 4 / 5;
   margin: 0;
   overflow: hidden;
+  border: 1px solid var(--strong-line);
   border-radius: 8px;
   background: var(--charcoal);
+  box-shadow: 0 14px 32px rgba(24, 29, 27, 0.08);
 }
 
 .photo-grid figure::after {
@@ -428,6 +468,12 @@ section h2 {
   font-weight: 800;
 }
 
+.site-footer a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 @media (max-width: 980px) {
   .site-header {
     align-items: flex-start;
@@ -445,7 +491,7 @@ section h2 {
   }
 
   .hero-image {
-    object-position: 58% center;
+    object-position: 56% 42%;
   }
 
   .hero-content {
@@ -526,7 +572,7 @@ section h2 {
   }
 
   .hero-image {
-    object-position: 63% center;
+    object-position: 56% 42%;
   }
 
   .hero-content {
@@ -540,6 +586,11 @@ section h2 {
 
   .hero-copy {
     font-size: 1.02rem;
+  }
+
+  .instagram-cta {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .profile-strip,
